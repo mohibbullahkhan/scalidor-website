@@ -144,8 +144,6 @@ export function HeroContent() {
         aria-hidden="true"
       />
 
-      <div className="hero-corner" />
-
       {/* Main headline with staggered word animation */}
       <h1 className="hero-heading">
         <motion.span

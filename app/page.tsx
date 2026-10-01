@@ -34,6 +34,7 @@ export default function Home() {
 
       {/* Section 02: Hero with Framer Motion Typography & Ambient Glow */}
       <Section number="02" className="home-hero">
+        <div className="hero-corner" />
         <HeroContent />
       </Section>
 
