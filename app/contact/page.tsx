@@ -1,0 +1,8 @@
+import type { Metadata } from 'next';
+import { PageHero, Section, Label } from '@/components/shared';
+import { ContactForm } from '@/components/contact-form';
+export const metadata: Metadata = { title: 'Contact — Start a Project', description: 'Talk to Scalidor about SaaS development, AI, automation, custom software, product engineering, or partnerships.', alternates: { canonical: '/contact' } };
+export default function Contact() { return <>
+  <PageHero label="START A CONVERSATION" title="Let’s build" accent="something valuable." description="A new product. A better platform. A difficult operational problem. Tell us what you are working on, and where you want to go." />
+  <Section number="02"><div className="contact-layout"><ContactForm /><aside className="contact-aside"><Label>WORK WITH US</Label><h3>Good technology starts<br />with a good conversation.</h3><p>Share the context, the users, and the problem. You don’t need a finished specification to start.</p><div className="inquiry-type"><h4>Products & engineering</h4><p>From discovery and MVPs to existing platforms, AI workflows, and industry software.</p></div><div className="inquiry-type"><h4>Partnerships</h4><p>Building, distributing, integrating, or investing in a Scalidor product? Select Partnership in your inquiry.</p></div><div className="inquiry-type"><h4>Industry opportunities</h4><p>Tell us where existing software is failing your business, and what a better system could do.</p></div><span className="mono">PRODUCT THINKING. ENGINEERING QUALITY.<br />INTELLIGENT SYSTEMS. SCALABLE ARCHITECTURE.</span></aside></div></Section>
+</>; }

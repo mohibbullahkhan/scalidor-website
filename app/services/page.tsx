@@ -1,0 +1,12 @@
+import Link from 'next/link';
+import type { Metadata } from 'next';
+import { PageHero, Section, Label, CTA } from '@/components/shared';
+import { ServiceIcon } from '@/components/icon';
+import { services, workProcess } from '@/lib/content';
+export const metadata: Metadata = { title: 'Technology Services', description: 'SaaS development, AI and automation, custom software, product engineering, web and mobile applications, and UI/UX design.', alternates: { canonical: '/services' } };
+export default function Services() { return <>
+  <PageHero label="BUILD WITH SCALIDOR" title="Engineering products," accent="not just projects." description="We work with companies that need technology built around meaningful business problems. Product strategy, design, engineering, and scalable architecture — connected from the start." />
+  <Section number="02"><div className="section-heading"><div><Label>OUR SERVICES</Label><h2>The capabilities<br />behind the product.</h2></div><p>From a new SaaS platform to intelligent automation or complex operational software.</p></div><div className="all-service-grid">{services.map((s, i) => <Link href={`/services/${s.slug}`} className="service-card bracket" key={s.slug}><div className="card-top"><ServiceIcon name={s.icon} size={26} /><span className="mono">0{i + 1}</span></div><h3>{s.name}</h3><p>{s.description}</p><span className="mono card-link">EXPLORE SERVICE <span>+</span></span></Link>)}</div></Section>
+  <Section number="03" dark><div className="section-heading"><div><Label>HOW WE WORK</Label><h2>Clear at every stage.</h2></div><p>A considered process that moves from understanding the problem to improving a live product.</p></div><div className="process-grid">{workProcess.map(([name, text], i) => <div className="process-step" key={name}><span className="mono">0{i + 1} /</span><h3>{name}</h3><p>{text}</p></div>)}</div></Section>
+  <Section number="04"><div className="two-column"><div><Label>AN ENGINEERING PARTNER</Label><h2>Start where<br />you are.</h2></div><div className="body-copy"><h3>A new idea. An existing product. A bigger ambition.</h3><p>Whether you are validating a concept, building an MVP, modernizing a platform, or preparing for growth, we focus on the next meaningful step.</p><p>Tell us about the users, the workflow, and the business problem. We can help define the right scope and move the product forward.</p><Link href="/contact" className="text-link">Start a conversation</Link></div></div></Section><CTA number="05" />
+</>; }
