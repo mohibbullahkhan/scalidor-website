@@ -14,8 +14,12 @@ export function ContactForm() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const service = params.get('service');
+    const interestParam = params.get('interest');
     if (services.some(s => s.slug === service)) setInterest(service!);
-    else if (params.get('interest') === 'product') setInterest('product');
+    else if (interestParam === 'real-estate-saas' || interestParam === 'real-estate') setInterest('real-estate-saas');
+    else if (interestParam === 'commission-pro') setInterest('commission-pro');
+    else if (interestParam === 'saas-subscription' || interestParam === 'subscription') setInterest('saas-subscription');
+    else if (interestParam === 'product') setInterest('product');
   }, []);
   useEffect(() => { if (notice) noticeRef.current?.focus(); }, [notice]);
   function downloadDraft() {
@@ -48,7 +52,25 @@ export function ContactForm() {
       <div className="field"><label htmlFor="email">Work email</label><input id="email" name="email" type="email" required maxLength={254} autoComplete="email" placeholder="you@company.com" /></div>
       <div className="field"><label htmlFor="company">Company <span>(optional)</span></label><input id="company" name="company" maxLength={120} autoComplete="organization" placeholder="Company name" /></div>
       <div className="field"><label htmlFor="phone">Phone <span>(optional)</span></label><input id="phone" name="phone" type="tel" maxLength={40} autoComplete="tel" placeholder="Phone number" /></div>
-      <div className="field full"><label htmlFor="interest">What are you interested in?</label><select id="interest" name="interest" value={interest} onChange={e => setInterest(e.target.value)} required><option value="" disabled>Select a service or opportunity</option>{services.map(s => <option value={s.slug} key={s.slug}>{s.name}</option>)}<option value="partnership">Partnership</option><option value="product">Scalidor product</option><option value="other">Other</option></select></div>
+      <div className="field full">
+        <label htmlFor="interest">What are you interested in?</label>
+        <select id="interest" name="interest" value={interest} onChange={e => setInterest(e.target.value)} required>
+          <option value="" disabled>Select a product or service</option>
+          <optgroup label="SaaS Products (Subscription)">
+            <option value="real-estate-saas">Real Estate SaaS Platform</option>
+            <option value="commission-pro">Commission Pro (Chemical Industry)</option>
+            <option value="saas-subscription">General SaaS Subscription</option>
+          </optgroup>
+          <optgroup label="Engineering Services">
+            {services.map(s => <option value={s.slug} key={s.slug}>{s.name}</option>)}
+          </optgroup>
+          <optgroup label="Other Inquiries">
+            <option value="partnership">Partnership</option>
+            <option value="product">Scalidor product inquiry</option>
+            <option value="other">Other</option>
+          </optgroup>
+        </select>
+      </div>
       <div className="field"><label htmlFor="stage">Project stage</label><select id="stage" name="stage" required defaultValue=""><option value="" disabled>Select a stage</option>{['Idea / Discovery', 'MVP', 'Existing Product', 'Scaling Product', 'Enterprise System', 'Not Sure'].map(t => <option key={t}>{t}</option>)}</select></div>
       <div className="field"><label htmlFor="budget">Estimated budget <span>(optional)</span></label><input id="budget" name="budget" maxLength={80} placeholder="Amount and currency, if known" /></div>
       <div className="field full"><label htmlFor="message">About your project</label><textarea id="message" name="message" required minLength={20} maxLength={5000} placeholder="Tell us about the problem, product, or opportunity. What would a good outcome look like?" /></div>

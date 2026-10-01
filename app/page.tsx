@@ -4,6 +4,7 @@ import { Check, Layers3, Sparkles } from 'lucide-react';
 import { Section, Label, CTA } from '@/components/shared';
 import { FlowDiagram } from '@/components/flow-diagram';
 import { ProductConcept } from '@/components/product-concept';
+import { CommissionProConcept } from '@/components/commission-pro-concept';
 import { industries, services } from '@/lib/content';
 import type { Metadata } from 'next';
 import {
@@ -28,8 +29,8 @@ export default function Home() {
 
       {/* Section 01: Top Banner */}
       <Section number="01" className="announcement">
-        <span className="mono">PRODUCTS · AI · SOFTWARE · AUTOMATION</span>
-        <span className="mono announcement-end">BUILT FOR WHAT COMES NEXT</span>
+        <span className="mono">SAAS PRODUCTS · CLOUD SUBSCRIPTION PLATFORMS · BESPOKE SERVICES</span>
+        <span className="mono announcement-end">SPECIALIZED FOR REAL ESTATE & CHEMICAL SECTORS</span>
       </Section>
 
       {/* Section 02: Hero with Framer Motion Typography & Ambient Glow */}
@@ -103,16 +104,153 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Section 06: Services Grid with Spotlight Cards */}
-      <Section number="06" className="services-section">
+      {/* Section 06: Featured SaaS Product Section */}
+      <Section number="06" className="product-section" id="products">
+        <div className="section-heading">
+          <Reveal>
+            <div>
+              <Label>FLAGSHIP SAAS PRODUCTS</Label>
+              <h2>
+                Real industries.
+                <br />
+                <span className="mono-accent">Subscription scale.</span>
+              </h2>
+            </div>
+          </Reveal>
+          <p>
+            Scalidor engineers and operates specialized cloud SaaS platforms designed to replace fragmented tools with unified, subscription-based industry operating systems.
+          </p>
+        </div>
+
+        {/* Subscription value callout strip */}
+        <div className="subscription-callout-strip mono" aria-label="SaaS subscription guarantees">
+          <div className="subscription-callout-item">
+            <Check size={14} /> CLOUD SAAS SUBSCRIPTIONS
+          </div>
+          <div className="subscription-callout-item">
+            <Check size={14} /> MULTI-TENANT ARCHITECTURE
+          </div>
+          <div className="subscription-callout-item">
+            <Check size={14} /> PREDICTABLE MONTHLY & ANNUAL PLANS
+          </div>
+          <div className="subscription-callout-item">
+            <Check size={14} /> AUTOMATIC CONTINUOUS UPDATES
+          </div>
+        </div>
+
+        {/* Product 01: Real Estate SaaS Platform */}
+        <Reveal y={30} duration={0.8}>
+          <div className="featured-product">
+            <div className="featured-copy">
+              <div className="status-row">
+                <span className="status mono">
+                  <span className="status-dot-pulse" aria-hidden="true" />
+                  IN DEVELOPMENT · BETA 2026
+                </span>
+                <span className="subscription-badge mono">
+                  SAAS SUBSCRIPTION
+                </span>
+              </div>
+              <h3>
+                Real Estate
+                <br />
+                Technology
+              </h3>
+              <p>
+                Properties, customers, websites, teams, and operations. An integrated cloud platform for the workflows behind modern real estate brokerages and property operators.
+              </p>
+              <div className="product-tags mono">
+                <span>PROPERTY OPERATIONS</span>
+                <span>CRM</span>
+                <span>AUTOMATION</span>
+                <span>TENANT PORTALS</span>
+              </div>
+              <div className="product-cta-group">
+                <Link href="/products#real-estate" className="button">
+                  Explore the platform
+                </Link>
+                <span className="sub-model-note mono">Monthly & annual agency subscriptions</span>
+              </div>
+            </div>
+            <ProductConcept />
+          </div>
+        </Reveal>
+
+        {/* Product 02: Commission Pro (Chemical Industry SaaS) */}
+        <Reveal y={30} duration={0.8}>
+          <div className="featured-product featured-product-alt">
+            <div className="featured-copy">
+              <div className="status-row">
+                <span className="status status-chemical mono">
+                  <span className="status-dot-pulse" aria-hidden="true" />
+                  FLAGSHIP SAAS · CHEMICAL SECTOR
+                </span>
+                <span className="subscription-badge mono">
+                  PLANT CLOUD LICENSE
+                </span>
+              </div>
+              <h3>
+                Commission Pro
+                <span className="product-subtitle">Chemical Industry SaaS</span>
+              </h3>
+              <p>
+                Specialized cloud SaaS platform for chemical plant commissioning, process verification, safety interlocks, and batch readiness. Replaces scattered spreadsheets with verified real-time cloud workflows.
+              </p>
+              <div className="product-tags mono">
+                <span>PLANT COMMISSIONING</span>
+                <span>CHEMICAL PROCESSES</span>
+                <span>SAFETY & COMPLIANCE</span>
+                <span>BATCH AUDIT TRAILS</span>
+              </div>
+              <div className="product-cta-group">
+                <Link href="/products#commission-pro" className="button">
+                  Explore Commission Pro
+                </Link>
+                <span className="sub-model-note mono">Per-facility SaaS subscription · Enterprise SLA</span>
+              </div>
+            </div>
+            <CommissionProConcept />
+          </div>
+        </Reveal>
+
+        {/* Minis: Intelligent Business Systems & Future Industry Platforms */}
+        <StaggerGroup className="product-minis" stagger={0.14}>
+          <StaggerItem className="product-mini-col">
+            <Link href="/products#intelligent-systems" className="product-mini-link">
+              <Sparkles size={25} />
+              <div>
+                <span className="mono">RESEARCH & DEVELOPMENT</span>
+                <h3>Intelligent Business Systems</h3>
+                <p>Business workflows, enhanced by AI and automation.</p>
+              </div>
+              <span className="plus-sign">+</span>
+            </Link>
+          </StaggerItem>
+
+          <StaggerItem className="product-mini-col">
+            <Link href="/products#future-industries" className="product-mini-link">
+              <Layers3 size={25} />
+              <div>
+                <span className="mono">LONG-TERM DIRECTION</span>
+                <h3>Future Industry Platforms</h3>
+                <p>One technology foundation. Many industry possibilities.</p>
+              </div>
+              <span className="plus-sign">+</span>
+            </Link>
+          </StaggerItem>
+        </StaggerGroup>
+      </Section>
+
+      {/* Section 07: Services Grid with Spotlight Cards */}
+      <Section number="07" className="services-section">
         <div className="section-heading">
           <Reveal>
             <div>
               <Label>OUR CAPABILITIES</Label>
               <h2>
-                From an idea
+                Bespoke engineering
                 <br />
-                to a scalable product.
+                for specialized systems.
               </h2>
             </div>
           </Reveal>
@@ -132,79 +270,6 @@ export default function Home() {
               iconName={s.icon}
             />
           ))}
-        </StaggerGroup>
-      </Section>
-
-      {/* Section 07: Featured Product Section */}
-      <Section number="07" className="product-section">
-        <div className="section-heading">
-          <Reveal>
-            <div>
-              <Label>SCALIDOR PRODUCTS</Label>
-              <h2>
-                Real industries.
-                <br />
-                <span className="mono-accent">Real possibilities.</span>
-              </h2>
-            </div>
-          </Reveal>
-          <p>
-            Building a portfolio of software products around how businesses actually work.
-          </p>
-        </div>
-
-        <Reveal y={30} duration={0.8}>
-          <div className="featured-product">
-            <div className="featured-copy">
-              <span className="status mono">
-                <span className="status-dot-pulse" aria-hidden="true" />
-                IN DEVELOPMENT
-              </span>
-              <h3>
-                Real Estate
-                <br />
-                Technology
-              </h3>
-              <p>
-                Properties, customers, websites, teams, and operations. An integrated platform for the work behind real estate.
-              </p>
-              <div className="product-tags mono">
-                <span>PROPERTY OPERATIONS</span>
-                <span>CRM</span>
-                <span>AUTOMATION</span>
-              </div>
-              <Link href="/products#real-estate" className="button">
-                Explore the platform
-              </Link>
-            </div>
-            <ProductConcept />
-          </div>
-        </Reveal>
-
-        <StaggerGroup className="product-minis" stagger={0.14}>
-          <StaggerItem>
-            <Link href="/products#intelligent-systems" className="product-mini-link">
-              <Sparkles size={25} />
-              <div>
-                <span className="mono">RESEARCH & DEVELOPMENT</span>
-                <h3>Intelligent Business Systems</h3>
-                <p>Business workflows, enhanced by AI and automation.</p>
-              </div>
-              <span className="plus-sign">+</span>
-            </Link>
-          </StaggerItem>
-
-          <StaggerItem>
-            <Link href="/products#future-industries" className="product-mini-link">
-              <Layers3 size={25} />
-              <div>
-                <span className="mono">LONG-TERM DIRECTION</span>
-                <h3>Future Industry Platforms</h3>
-                <p>One technology foundation. Many industry possibilities.</p>
-              </div>
-              <span className="plus-sign">+</span>
-            </Link>
-          </StaggerItem>
         </StaggerGroup>
       </Section>
 

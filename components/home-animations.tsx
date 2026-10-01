@@ -180,8 +180,9 @@ export function HeroContent() {
         transition={{ duration: 0.8, delay: 0.28, ease: easeOutExpo }}
       >
         <p>
-          We build SaaS platforms, intelligent systems, and industry software
-          that turn complex problems into scalable products.
+          We build and operate industry-defining SaaS subscription platforms — from
+          Real Estate Technology to Commission Pro for the chemical sector — backed
+          by scalable product engineering.
         </p>
 
         <div className="hero-actions">
@@ -191,15 +192,15 @@ export function HeroContent() {
             transition={{ duration: 0.2 }}
           >
             <Link href="/products" className="button hero-main-button">
-              <Component size={18} /> Explore our products
+              <Component size={18} /> Explore SaaS Products
             </Link>
           </motion.div>
           <motion.div
             whileHover={{ x: 4 }}
             transition={{ duration: 0.2 }}
           >
-            <Link href="/contact" className="text-link">
-              Start a project →
+            <Link href="/contact?interest=saas-subscription" className="text-link">
+              Subscribe or talk with us →
             </Link>
           </motion.div>
         </div>

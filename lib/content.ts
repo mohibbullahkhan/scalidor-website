@@ -1,9 +1,54 @@
 export const site = {
   name: 'Scalidor',
   tagline: 'Technology built to scale.',
-  description: 'Scalidor builds scalable SaaS platforms, AI systems, automation solutions, and industry-specific software for modern businesses.',
+  description: 'Scalidor is a software company building industry-defining SaaS subscription platforms — including Real Estate Technology and Commission Pro for the chemical industry — complemented by scalable product engineering services.',
   origin: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
 };
+
+export const products = [
+  {
+    slug: 'real-estate',
+    name: 'Real Estate SaaS Platform',
+    short: 'Real Estate Platform',
+    category: 'PROPERTY & ASSET MANAGEMENT',
+    status: 'IN DEVELOPMENT',
+    model: 'SaaS Subscription · Multi-Tenant Cloud',
+    tagline: 'An integrated SaaS platform for the work behind modern real estate.',
+    description: 'Properties, customers, websites, teams, and operations connected in one unified cloud system designed for real estate brokerages and portfolio managers.',
+    capabilities: [
+      'Property & portfolio operations',
+      'Real-estate specialized CRM',
+      'Listing websites & syndication',
+      'Tenant & client portals',
+      'Automated lead management',
+      'Team & agent collaboration',
+      'Contract & lease tracking',
+      'Operational analytics & automation',
+    ],
+    pricingNote: 'Tiered monthly & annual subscriptions for individual brokerages, agencies, and enterprise property firms.',
+  },
+  {
+    slug: 'commission-pro',
+    name: 'Commission Pro',
+    short: 'Commission Pro',
+    category: 'CHEMICAL INDUSTRY SAAS',
+    status: 'FLAGSHIP SAAS',
+    model: 'Cloud SaaS Subscription · Plant License',
+    tagline: 'Specialized SaaS platform for chemical plant commissioning, process verification, and safety compliance.',
+    description: 'A cloud SaaS platform purpose-built for the chemical industry to orchestrate plant commissioning workflows, instrument calibration, safety interlock verification, and OSHA/ISO regulatory compliance.',
+    capabilities: [
+      'Plant commissioning digital workflows',
+      'Chemical process verification & telemetry',
+      'Automated safety interlock & ESD logs',
+      'OSHA, EPA & ISO audit compliance',
+      'Chemical feedstock & batch readiness',
+      'Equipment & sensor calibration logs',
+      'Multi-facility operations dashboard',
+      'Instant regulatory audit export',
+    ],
+    pricingNote: 'Flexible subscription tiers per chemical manufacturing facility with enterprise SLA and dedicated onboarding.',
+  },
+] as const;
 
 export const services = [
   {

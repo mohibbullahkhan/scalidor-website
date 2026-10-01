@@ -6,7 +6,15 @@ import { services } from '@/lib/content';
 
 export const runtime = 'nodejs';
 export const maxDuration = 20;
-const interestValues = [...services.map(s => s.slug), 'partnership', 'product', 'other'];
+const interestValues = [
+  ...services.map(s => s.slug),
+  'partnership',
+  'product',
+  'real-estate-saas',
+  'commission-pro',
+  'saas-subscription',
+  'other',
+];
 const stages = ['Idea / Discovery', 'MVP', 'Existing Product', 'Scaling Product', 'Enterprise System', 'Not Sure'];
 const cleanText = (max: number) => z.string().trim().max(max).refine(s => !/[\r\n\u0000]/.test(s));
 const schema = z.object({
